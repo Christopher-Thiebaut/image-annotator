@@ -179,6 +179,9 @@
                             <constraint firstItem="zk9-OS-f67" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="xvi-Lr-4k6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainImageView" destination="zk9-OS-f67" id="psf-PB-i3g"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

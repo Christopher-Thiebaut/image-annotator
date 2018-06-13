@@ -10,6 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    @IBOutlet private weak var mainImageView: NSImageView!
+    
     private let fileManager = FileManager.default
     private let imageFileTypes: Set<String> = ["jpg", "png"]
     
@@ -22,7 +24,21 @@ class ViewController: NSViewController {
     
     private var imageURLS: [URL] = [] {
         didSet {
-            print("\(imageURLS)")
+            guard imageURLS.count > 0 else { return }
+            currentImageIndex = 0
+        }
+    }
+    
+    private var currentImage: NSImage? {
+        didSet {
+            mainImageView.image = currentImage
+        }
+    }
+    
+    private var currentImageIndex: Int = 0 {
+        didSet {
+            guard currentImageIndex >= 0 && currentImageIndex < imageURLS.count else { return }
+            currentImage =  NSImage(byReferencing: imageURLS[currentImageIndex])
         }
     }
 
@@ -57,6 +73,12 @@ class ViewController: NSViewController {
             return false
         }
         return imageFileTypes.contains(String(fileExtension))
+    }
+    
+    private func incrementImageIndex(by indexChange: Int) {
+        guard imageURLS.count > 0 else { return }
+        //The new image index is set based on the number of images so that if the index would be out of bounds it will loop back around to the begining (or end) of the array
+        currentImageIndex = (currentImageIndex + indexChange) % imageURLS.count
     }
 
 }
