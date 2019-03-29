@@ -170,12 +170,24 @@ extension ImageAnnotationViewController {
         panel.canChooseFiles = false
         panel.allowsMultipleSelection = false
         
-        panel.beginSheetModal(for: window) {[weak self] (response) in
+        panel.beginSheetModal(for: window) { [weak self] (response) in
             if response == .OK, let selectedFolder = panel.urls.first {
                 self?.imagesDirectory = selectedFolder
             }
         }
-    }    
+    }
+    
+    @IBAction func resetDirectory(_ sender: Any?) {
+        print("resetting")
+        finishedRestoringFromScratchFile = false
+        annotations = [:]
+        currentImageIndex = 0
+        styles = []
+        labelsTableView.reloadData()
+        finishedRestoringFromScratchFile = true
+        selectedCategory = nil
+        updateScratchFile()
+    }
 }
 
 extension ImageAnnotationViewController: NSTableViewDataSource {
@@ -184,7 +196,8 @@ extension ImageAnnotationViewController: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-       return styles[row].text
+//        guard styles.containsIndex(row) else { return nil }
+        return styles[row].text
     }
 }
 

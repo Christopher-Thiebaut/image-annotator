@@ -60,7 +60,12 @@
                                 <menu key="submenu" title="File" id="mal-AE-dG4">
                                     <items>
                                         <menuItem title="Reset Directory" id="SMn-gU-5P0">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                            <connections>
+                                                <action selector="resetDirectory:" target="Ady-hI-5gd" id="9FA-5c-4l7"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
