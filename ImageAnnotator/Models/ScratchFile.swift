@@ -68,3 +68,30 @@ extension URL {
         return lastPathComponent
     }
 }
+
+extension ScratchFile {
+    func getSFrameCSV() -> Data {
+        var lines = [String]()
+        lines.append("image_path,annotations")
+        for (imagePath, annotations) in annotations {
+            let fileName = imagePath
+            let annotationString = "[\(annotations.map( { $0.asTuriJSON() }).joined(separator: ", "))]"
+            lines.append("\(fileName), \(annotationString)")
+        }
+        let fileText = lines.joined(separator: "\n")
+        return fileText.data(using: .utf8)!
+    }
+}
+
+extension Annotation {
+    func asTuriJSON() -> String {
+        return "{ 'label': '\(style.text)', 'type': 'rectangle', 'coordinates': \(coordinates.turiJSON)}"
+    }
+}
+
+extension Rectangle {
+    var turiJSON: String {
+        let center = getCenter()
+        return "{ 'x': \(center.x), 'y': \(center.y), 'width': \(size.width), 'height': \(size.height) }"
+    }
+}

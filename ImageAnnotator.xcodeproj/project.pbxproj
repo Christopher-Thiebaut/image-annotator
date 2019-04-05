@@ -10,7 +10,7 @@
 		B32F144E223B217D00894E1C /* CreateCategoryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32F144C223B217D00894E1C /* CreateCategoryModal.swift */; };
 		B32F144F223B217D00894E1C /* CreateCategoryModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32F144D223B217D00894E1C /* CreateCategoryModal.xib */; };
 		B343F5E5223C85F2009905E6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343F5E4223C85F2009905E6 /* Color.swift */; };
-		B343F5E7223C8647009905E6 /* WorkingFileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343F5E6223C8647009905E6 /* WorkingFileHeader.swift */; };
+		B343F5E7223C8647009905E6 /* ScratchFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343F5E6223C8647009905E6 /* ScratchFile.swift */; };
 		B343F5E9223C900D009905E6 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343F5E8223C900D009905E6 /* Rectangle.swift */; };
 		B3BACBD120CFF30800465D27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BACBD020CFF30800465D27 /* AppDelegate.swift */; };
 		B3BACBD320CFF30800465D27 /* ImageAnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BACBD220CFF30800465D27 /* ImageAnnotationViewController.swift */; };
@@ -36,7 +36,7 @@
 		B32F144C223B217D00894E1C /* CreateCategoryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryModal.swift; sourceTree = "<group>"; };
 		B32F144D223B217D00894E1C /* CreateCategoryModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryModal.xib; sourceTree = "<group>"; };
 		B343F5E4223C85F2009905E6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		B343F5E6223C8647009905E6 /* WorkingFileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingFileHeader.swift; sourceTree = "<group>"; };
+		B343F5E6223C8647009905E6 /* ScratchFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchFile.swift; sourceTree = "<group>"; };
 		B343F5E8223C900D009905E6 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		B3BACBCD20CFF30800465D27 /* ImageAnnotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAnnotator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BACBD020CFF30800465D27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				B343F5E4223C85F2009905E6 /* Color.swift */,
-				B343F5E6223C8647009905E6 /* WorkingFileHeader.swift */,
+				B343F5E6223C8647009905E6 /* ScratchFile.swift */,
 				B343F5E8223C900D009905E6 /* Rectangle.swift */,
 			);
 			path = Models;
@@ -254,7 +254,7 @@
 				B3F4D4402239515D00D6573C /* AnnotationView.swift in Sources */,
 				B343F5E9223C900D009905E6 /* Rectangle.swift in Sources */,
 				B3E94CC12221CB4100DB8AEE /* CategoryLabelView.swift in Sources */,
-				B343F5E7223C8647009905E6 /* WorkingFileHeader.swift in Sources */,
+				B343F5E7223C8647009905E6 /* ScratchFile.swift in Sources */,
 				B3E94CC32221F57200DB8AEE /* BoxSelectingImageView.swift in Sources */,
 				B343F5E5223C85F2009905E6 /* Color.swift in Sources */,
 				B32F144E223B217D00894E1C /* CreateCategoryModal.swift in Sources */,

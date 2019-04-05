@@ -76,6 +76,11 @@ class ImageAnnotationViewController: NSViewController {
         }
     }
     
+    private var scratchFile: ScratchFile? {
+        guard let directory = imagesDirectory else { return nil }
+        return ScratchFile(withDirectory: directory)
+    }
+    
     private var finishedRestoringFromScratchFile = false
 
     override func viewDidLoad() {
@@ -188,6 +193,22 @@ extension ImageAnnotationViewController {
         selectedCategory = nil
         updateScratchFile()
     }
+    
+    @IBAction func saveAnnotations(sender: Any?) {
+        guard let window = view.window else { return }
+        let savePanel = NSSavePanel()
+        savePanel.beginSheetModal(for: window) { [weak self] response in
+            guard let file = savePanel.url,
+                let scratchFile = self?.scratchFile,
+                response == .OK else { return }
+            let data = scratchFile.getSFrameCSV()
+            do {
+                try data.write(to: file)
+            } catch let error {
+                NSLog("Error saving output file: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 extension ImageAnnotationViewController: NSTableViewDataSource {
@@ -196,7 +217,6 @@ extension ImageAnnotationViewController: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-//        guard styles.containsIndex(row) else { return nil }
         return styles[row].text
     }
 }

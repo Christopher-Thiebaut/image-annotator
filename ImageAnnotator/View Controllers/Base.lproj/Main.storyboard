@@ -49,7 +49,7 @@
                                         </menuItem>
                                         <menuItem title="Save As…" keyEquivalent="S" id="Bw7-FT-i3A">
                                             <connections>
-                                                <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="mDf-zr-I0C"/>
+                                                <action selector="saveAnnotationsWithSender:" target="Ady-hI-5gd" id="zkg-na-Flr"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -57,7 +57,7 @@
                             </menuItem>
                             <menuItem title="Edit" id="5QF-Oa-p0T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="File" id="mal-AE-dG4">
+                                <menu key="submenu" title="Edit" id="mal-AE-dG4">
                                     <items>
                                         <menuItem title="Reset Directory" id="SMn-gU-5P0">
                                             <string key="keyEquivalent" base64-UTF8="YES">

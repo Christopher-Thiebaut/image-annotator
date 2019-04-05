@@ -22,3 +22,11 @@ extension CGRect {
         return Rectangle(origin: origin, size: size)
     }
 }
+
+extension Rectangle {
+    
+    func getCenter() -> (x: CGFloat, y: CGFloat) {
+        let cgRect = asCGRect
+        return (x: cgRect.midX, y: cgRect.midY)
+    }
+}
